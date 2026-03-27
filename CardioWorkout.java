@@ -1,4 +1,5 @@
 class CardioWorkout extends Workout {
+
     CardioWorkout(String name, int duration) {
         super(name, duration);
     }
