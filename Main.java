@@ -2,8 +2,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        List<Workout> workouts = WorkoutRepository.loadWorkouts();
         Scanner sc = new Scanner(System.in);
-        List<Workout> workouts = new ArrayList<>();
 
         while (true) {
             System.out.println("\n1. Add Cardio Workout");
@@ -31,8 +32,12 @@ public class Main {
                 System.out.println("Total Calories: " + total);
             } 
             else {
+                WorkoutRepository.saveWorkouts(workouts);
+                System.out.println("Data saved successfully!");
                 break;
             }
         }
+
+        sc.close();
     }
 }
