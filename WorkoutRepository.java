@@ -20,14 +20,17 @@ class WorkoutRepository {
         try {
             BufferedReader br = new BufferedReader(new FileReader("workouts.txt"));
             String line;
+
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
                 list.add(new CardioWorkout(data[0], Integer.parseInt(data[1])));
             }
+
             br.close();
         } catch (Exception e) {
             System.out.println("No previous data found");
         }
+
         return list;
     }
 }
